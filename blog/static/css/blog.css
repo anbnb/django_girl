@@ -1,7 +1,8 @@
 .page-header {
     background-color: #ff9400;
     margin-top: 0;
-    padding: 20px 20px 20px 40px;
+    padding: 40px 30px;
+    position: relative;
 }
 
 .page-header h1, .page-header h1 a, .page-header h1 a:visited, .page-header h1 a:active {
@@ -10,9 +11,9 @@
     text-decoration: none;
 }
 
-.content {
+/*.content {
     margin-left: 40px;
-}
+}*/
 
 h1, h2, h3, h4 {
     font-family: 'Lobster', cursive;
@@ -20,8 +21,11 @@ h1, h2, h3, h4 {
 
 .date {
     color: #828282;
+    transition: all .3s ease;
 }
-
+.date:hover {
+    color: #000;
+}
 .save {
     float: right;
 }
@@ -32,13 +36,48 @@ h1, h2, h3, h4 {
 
 .top-menu, .top-menu:hover, .top-menu:visited {
     color: #ffffff;
-    float: right;
-    font-size: 26pt;
-    margin-right: 20px;
+    font-size: 24pt;
+}
+
+.top-menu {
+    position: absolute;
+    right: 30px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.top-menu-item {
+    padding: 10px;
+    z-index: 1;
+    font-size: 24px;
+    transition: all .3s ease;
+    cursor: pointer;
+}
+.top-menu-item:after {
+    position: absolute;
+    content: "";
+    z-index: -1;
+    left: 50%;
+    right: 50%;
+    top: 50%;
+    bottom: 50%;
+    border-radius: 50%;
+    background-color: #fff;
+    transition: all .3s ease;
+}
+
+.top-menu-item:hover {
+    color: #ff9400;
+}
+
+.top-menu-item:hover:after {
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
 }
 
 .post {
-    margin-bottom: 30px;
+    margin-bottom: 50px;
 }
 
 .post h1 a, .post h1 a:visited {
@@ -46,9 +85,79 @@ h1, h2, h3, h4 {
 }
 
 .post h1  {
-    margin: 10px 0;
+    margin: 5px 0 10px;
+    font-size: 34px;
+}
+.post h1 a {
+    cursor: pointer;
+    transition: all .3s ease;
+}
+
+.post h1 a:hover  {
+    margin-left: 30px;
+    text-decoration: none;
 }
 
 .post p  {
     margin-bottom: 0;
 }
+
+.page-header h1 {
+    margin: 0;
+}
+
+.content-detail {
+    position: relative;
+    margin: 5px 0 15px;
+}
+
+.content-detail h1 {
+    margin: 0 0 0 35px;
+    transition: all .3s ease;
+}
+
+.editor-btn {
+    position: absolute;
+    z-index: 1;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 10px;
+    transition: all .3s ease;
+    cursor: pointer;
+}
+
+.editor-btn:after {
+    position: absolute;
+    content: "";
+    z-index: -1;
+    left: -5px;
+    right: -5px;
+    top: -5px;
+    bottom: -5px;
+    border-radius: 50%;
+    transition: all .3s ease;
+    border: solid 2px #000;
+    border-color: transparent;
+}
+
+.editor-btn:hover:after {
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    border-color: #000;
+    transition: all .3s ease;
+}
+.editor-btn span {
+    color: #000;
+    transition: all .3s ease;
+}
+.editor-btn:hover span {
+    transition: all .3s ease;
+}
+
+.editor-btn:hover + h1 {
+    margin-left: 50px;
+}
+
